@@ -12,15 +12,19 @@ const props = defineProps(['tarefas']);
             </label>
         </li>
     </ul>
-</template>
+    <template <template v-if="props.tarefas.length === 0">
+        <p>
+            Você precisa adicionar tarefas!
+        </p>
+    </template>
 
-<style scoped>
-.done {
-    text-decoration: line-through;
-}
-</style>
+    <style scoped>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
 
-<script>
+    <script>
 const alteraStatusTarefa = (tarefa) => {
     tarefa.finalizada = !tarefa.finalizada;
 };
